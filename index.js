@@ -7,7 +7,7 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind-speed");
   let icon = document.querySelector("#icon");
 
-  temperatureElement.innerHTML = `${temperature}°C`;
+  temperatureElement.innerHTML = `${temperature}°`;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
