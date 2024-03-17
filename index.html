@@ -4,28 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,600,0,0" />
+
+<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+
 </head>
 <body>
-    <section>
-    
-<form>
+    <section class="page">
 
+<form>
 <input type="text" id="city" placeholder="Enter a city..." required />
 <input type="submit" value="Search" class="button" />
-
 </form>
 
 <div>
+    
+<p class="area">
+    <strong>
+        Pretoria
+    </strong>
+</p>
+    <h1 class="day-time">
     <span class="current-day"> Monday, </span>
     <span id="time"> 22:12 </span>
+    </h1>
 
-    <div class="temperature" id="current-temperature"> 23&deg;C </div>
+    <div class="temperature" id="current-temperature"> 23&deg;C </div> 
+    
+    </div>
     <span id="condition"> Clear clouds </span>
-    <span id="icon"> </span>
 
-    <div class="weather-list"> 
-     <ul>
-            <li>
+    <span id="icon"> ☁️</span>
+    
+     <ul class="weather-list">
+
+            <li class="humidity-list">
         <div id="humidity-icon">💧</div>
         <div>
         <strong id="humidity"> 60% </strong>
@@ -33,24 +58,27 @@
         <div>Humidity</div>
            </li>
 
-           <li>
+           <li class="wind-speed-list">
         <div id="wind-speed-icon">💨 </div>
         <div>
         <strong id="wind-speed"> 0km/h </strong>
         <div>
         <div>Wind </div>
           </li>
+          
      </ul>
+ </div>
 
-    </div>
-
-    </span>
-
-
-
-</div>
-
-</form>
-</section>
+<script src="index.js"> </script>
 </body>
+
+<footer id="footer">
+Coded by
+<a href="https://github.com/TshegoMorapama" target="_blank"> Tshegofatso Morapama </a>,
+open sourced by <a href="https://github.com/TshegoMorapama/Boso-Forecast" target="_blank"> Github</a>
+and hosted on <a href="https://app.netlify.com/sites/bosoforecast/overview" target="_blank"> Netlify </a>
+
+</footer>
+</section>
+
 </html>

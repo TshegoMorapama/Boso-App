@@ -1,0 +1,63 @@
+.area {
+    font-size: 40px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color:#363479;
+    text-align: center;}
+
+.temperature {
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 80px;
+    color:#5C69E7;
+    text-align: center;}
+
+.page {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background:#CDD1FF;
+    padding: 50px;
+    margin-top: 40px;}
+
+#city {
+    padding: 20px 280px 20px 10px;
+    border: 1px solid #d5e1e2;
+    border-radius: 6px;
+    color:white;}
+
+::placeholder {
+    font-size: 16px;
+    border: 0px;
+}
+
+.button {
+    padding: 20px;
+    border-radius: 6px;
+    border: 0px;
+    background: #759aec;}
+
+#footer {
+    padding: 50px 0px 30px 0px;
+    color:white;}
+
+ul{list-style-type: none;
+  border:0px solid#ECEAFF; 
+border-radius:10px;}
+
+li{list-style-type: none;
+    color: white;
+    display: inline-block;}
+
+.day-time{color: #7A79B9;
+    text-align: center;
+    font-size: 20px;
+    text-align: center;}
+
+#condition{
+    color:#434280;
+font-size: 20px;}
+
+#icon{font-size: 80px;
+    text-align: center;}
+
