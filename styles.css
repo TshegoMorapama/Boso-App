@@ -44,7 +44,7 @@
 ul{list-style-type: none;
     border:0px ; 
     border-radius:30px;
-    background-color: white;
+    background-color:#F8F9FA;
     padding: 15px 5px;
     padding-top: 5px;
     line-height: 23px;
@@ -81,9 +81,20 @@ li{list-style-type: none;
  left: 10px;
 }
 
-input[type=text] {
-    color: black;}
+.weather-forecast{
+    margin-top:10px;
+}
 
-
+.temperature-min{font-size: 13px;
+    opacity:0.5
+}
+.row{
+    font-size:16px;
+    opacity:0.5
+}
+.temperature-max{
+    font-size: 13px;
+}
+#weather-image{margin-left: -6px;}
 
 
