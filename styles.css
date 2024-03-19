@@ -83,12 +83,14 @@ li{list-style-type: none;
 
 .weather-forecast{
     margin-top:10px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .temperature-min{font-size: 13px;
     opacity:0.5
 }
-.row{
+.weather-forecast-date{
     font-size:16px;
     opacity:0.5
 }
@@ -96,5 +98,12 @@ li{list-style-type: none;
     font-size: 13px;
 }
 #weather-image{margin-left: -6px;}
+
+.weather-forecast-day {
+    margin: 30px;
+    text-align: center;
+    }
+
+
 
 

@@ -12,6 +12,7 @@ function displayTemperature(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon" />`;
+
 }
 
 function changeCity(event) {
@@ -46,7 +47,34 @@ function changeCity(event) {
   });
 
   document.getElementById("time").innerHTML = now;
+
+}
+function displayForecast() {
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sunday"];
+  let forecastHTML = "";
+
+  days.forEach(function (day) {
+    forecastHTML += `
+     <div class="weather-forecast-day">
+      <div class="weather-forecast-date"> ${day} </div>
+      <div>
+        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" width="48" id="weather-image" />
+      </div>
+      <div class="weather-forecast-temperatures>
+        <span class="temperature-max"> 
+        <strong>28&deg;</strong> 
+        </span>
+        <span class="temperature-min">17&deg;</span>
+      </div>
+      </div>
+      `;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHTML;
 }
 
 let form = document.querySelector(".button");
 form.addEventListener("click", changeCity);
+
+displayForecast();
