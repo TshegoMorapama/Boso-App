@@ -13,6 +13,7 @@ function displayTemperature(response) {
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon" />`;
 
+ getForecast(response.data.city);
 }
 
 function changeCity(event) {
@@ -47,27 +48,49 @@ function changeCity(event) {
   });
 
   document.getElementById("time").innerHTML = now;
+}
+
+function formatDay(timestemp) {
+  let date=new Date(timestemp * 1000);
+  let days= ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
 
 }
-function displayForecast() {
-  let days = ["Wed", "Thu", "Fri", "Sat", "Sunday"];
+
+function getForecast(city) {
+  let apiKey = "6971a13af1b8tb2ebe7419f6ba0o6bdc";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&unit=metric`;
+
+  axios(apiUrl).then(function (response) { 
+    displayForecast(response.data); 
+  });
+}
+
+function displayForecast(forecastData) { 
+  console.log(forecastData);
+
+  
   let forecastHTML = "";
 
-  days.forEach(function (day) {
-    forecastHTML += `
+  forecastData.daily.forEach(function (day, index) {
+    if (index < 5) {
+    forecastHTML = forecastHTML +
+    `
      <div class="weather-forecast-day">
-      <div class="weather-forecast-date"> ${day} </div>
+      <div class="weather-forecast-date"> ${formatDay(day.time)} </div>
       <div>
-        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" width="48" id="weather-image" />
+     <img src="${day.condition.icon_url}" alt="" width="48" id="weather-image" />
       </div>
-      <div class="weather-forecast-temperatures>
+      <div class="weather-forecast-temperatures">
         <span class="temperature-max"> 
-        <strong>28&deg;</strong> 
+        <strong>${Math.round(day.temperature.maximum)}&deg;</strong> 
         </span>
-        <span class="temperature-min">17&deg;</span>
+        <span class="temperature-min">${Math.round(day.temperature.minimum)}&deg;</span>
       </div>
       </div>
       `;
+    }
   });
 
   let forecastElement = document.querySelector("#forecast");
@@ -77,4 +100,4 @@ function displayForecast() {
 let form = document.querySelector(".button");
 form.addEventListener("click", changeCity);
 
-displayForecast();
+getForecast("pretoria");
